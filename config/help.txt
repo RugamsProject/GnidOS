@@ -1,0 +1,33 @@
+GnidOS Help
+===========
+
+Available DOS-like commands:
+- attrib     -> chmod + chattr (change file attributes)
+- cd/chdir   -> change directory
+- dir        -> list directory contents (use /w for wide format)
+- cls/clear  -> clear screen
+- copy       -> copy files
+- del/erase  -> delete files
+- deltree    -> recursively delete directories
+- echo       -> display message
+- format     -> format disk (use with caution!)
+- fdisk      -> disk partitioning tool
+- chkdsk     -> filesystem check
+- md/mkdir   -> create directory
+- rd/rmdir   -> remove directory
+- move       -> move files
+- path       -> manage PATH environment variable
+- ver        -> display system version
+
+Development tools:
+- asm <file.asm>   -> compile assembly program
+- runc <file.c>    -> compile and run C program
+
+Network commands:
+- net-setup  -> configure network
+- ssh        -> SSH client
+- nc         -> netcat utility
+
+For more information about a command, try: command --help
+Or check the Linux man pages: man <command>
+

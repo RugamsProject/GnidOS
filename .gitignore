@@ -1,0 +1,11 @@
+output/
+buildroot/
+*.o
+*.img
+*.iso
+*.cpio
+*.cpio.gz
+bzImage
+*.swp
+*.swo
+*~

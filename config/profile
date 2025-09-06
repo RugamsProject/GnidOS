@@ -1,0 +1,20 @@
+# /etc/profile
+
+export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin"
+export HOME="/root"
+export USER="root"
+export TERM="linux"
+export PS1='\u@\h:\w\$ '
+
+alias ls='ls --color=auto'
+alias dir='ls -l --color=auto'
+alias copy='cp'
+alias del='rm'
+alias move='mv'
+alias cls='clear'
+alias ver='uname -a; echo "GnidOS v0.1"'
+
+# Welcome message
+echo "Welcome to GnidOS - DOS-like Linux distribution"
+echo "Type 'help' for available commands"
+

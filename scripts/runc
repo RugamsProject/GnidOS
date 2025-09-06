@@ -1,0 +1,30 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]; then
+    echo "Usage: runc <file.c>"
+    exit 1
+fi
+
+input_file="$1"
+
+# Проверяем расширение файла
+if [ "${input_file##*.}" != "c" ]; then
+    echo "Error: File must have .c extension"
+    exit 1
+fi
+
+output_file="/tmp/$(basename "${input_file%.*}")"
+
+# Компилируем C код
+if ! tcc -o "$output_file" "$input_file"; then
+    echo "Compilation failed"
+    exit 1
+fi
+
+# Запускаем скомпилированную программу
+echo "Running $output_file:"
+echo "---"
+"$output_file"
+echo "---"
+echo "Program finished with exit code $?"
+

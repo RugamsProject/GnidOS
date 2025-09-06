@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# Mount proc and sys filesystems
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+
+# Create basic device nodes
+mknod /dev/console c 5 1
+mknod /dev/null c 1 3
+mknod /dev/zero c 1 5
+
+# Set up hostname
+hostname GnidOS
+
+# Mount root filesystem as read-write
+mount -o remount,rw /
+
+# Create necessary directories
+mkdir -p /tmp /run /var/log /mnt/cdrom /mnt/usb
+
+# Set up environment
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+export HOME=/root
+export USER=root
+
+# Start network setup
+ifconfig lo 127.0.0.1 up
+
+# Start getty on console
+setsid cttyhack /bin/dos
+
+# If we get here, something went wrong
+exec /bin/dos
+
